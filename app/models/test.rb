@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: tests
+#
+#  id          :integer          not null, primary key
+#  frequency   :integer
+#  description :text
+#  published   :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Test < ActiveRecord::Base
   attr_accessible :description, :frequency, :published
 

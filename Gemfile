@@ -20,6 +20,24 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'annotate', ">=2.5.0"
+  gem 'rails_best_practices'
+  gem 'pry-remote'
+  gem 'bullet'
+  #gem 'capistrano'
+  #gem 'rvm-capistrano'
+end
+
+group :test do 
+  #gem 'cucumber-rails'
+  #gem 'rspec'
+  #gem 'rspec-rails'
+  #
+  ## For model factory
+  #gem 'factory_girl_rails'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
