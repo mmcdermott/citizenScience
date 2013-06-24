@@ -8,6 +8,7 @@ class CreateNumericData < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :numeric_data, :question_id, :user_id
+    add_index :numeric_data, :question_id
+    add_index :numeric_data, :user_id
   end
 end

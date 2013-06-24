@@ -8,6 +8,7 @@ class CreateClassificationData < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :classification_data, :question_id, :user_id
+    add_index :classification_data, :question_id
+    add_index :classification_data, :user_id
   end
 end

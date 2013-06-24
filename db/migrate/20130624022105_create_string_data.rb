@@ -8,6 +8,7 @@ class CreateStringData < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :string_data, :question_id, :user_id
+    add_index :string_data, :question_id
+    add_index :string_data, :user_id
   end
 end
