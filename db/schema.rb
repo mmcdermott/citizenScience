@@ -11,6 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130624021523) do
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.string   "nickname"
+    t.text     "bio"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "profiles", ["user_id"], :name => "user_id_ix"
+
+  create_table "tests", :force => true do |t|
+    t.integer  "creator_id",                    :null => false
+    t.integer  "frequency",   :default => 1
+    t.text     "description"
+    t.boolean  "published",   :default => true
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "tests", ["creator_id"], :name => "creator_id_ix"
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

@@ -8,6 +8,6 @@ class CreateProfiles < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :profiles, :user_id, name: 'user_id_ix'
+    add_index :profiles, :user_id
   end
 end

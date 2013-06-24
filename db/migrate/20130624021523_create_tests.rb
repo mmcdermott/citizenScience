@@ -9,6 +9,6 @@ class CreateTests < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :tests, :creator_id, name: 'creator_id_ix'
+    add_index :tests, :creator_id
   end
 end
