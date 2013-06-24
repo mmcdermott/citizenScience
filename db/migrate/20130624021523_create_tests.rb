@@ -4,7 +4,7 @@ class CreateTests < ActiveRecord::Migration
       t.belongs_to :creator, null: false
       t.integer :frequency, default: 1
       t.text :description
-      t.boolean :published, default: false
+      t.boolean :published, default: true
 
       t.timestamps
     end
