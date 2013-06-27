@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
   has_many :string_data
   has_many :tests, through: :registrations, uniq: true
   has_many :created_tests, class_name: 'Test', inverse_of: :creator, foreign_key: 'creator_id'
+  has_many :questions, through: :classification_data
+  has_many :questions, through: :numeric_data
+  has_many :questions, through: :string_data
 end

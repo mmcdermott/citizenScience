@@ -48,4 +48,11 @@ CitizenScience::Application.configure do
     Bullet.rails_logger = true
     Bullet.airbrake = true
   end
+  silence_warnings do
+    begin
+      require 'pry'
+      IRB = Pry
+    rescue LoadError
+    end
+  end
 end

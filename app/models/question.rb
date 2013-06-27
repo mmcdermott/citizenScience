@@ -18,5 +18,8 @@ class Question < ActiveRecord::Base
   has_many :classification_data
   has_many :numeric_data
   has_many :string_data
+  has_many :users, through: :classification_data
+  has_many :users, through: :string_data
+  has_many :users, through: :numeric_data
   belongs_to :test
 end
