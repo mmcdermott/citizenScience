@@ -11,27 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624022224) do
+ActiveRecord::Schema.define(:version => 20130629155427) do
 
   create_table "classification_data", :force => true do |t|
-    t.integer  "question_id", :null => false
-    t.integer  "user_id",     :null => false
+    t.integer  "question_id",                    :null => false
+    t.integer  "user_id",                        :null => false
     t.integer  "value"
     t.boolean  "anonymized"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "public",      :default => false
   end
 
   add_index "classification_data", ["question_id"], :name => "index_classification_data_on_question_id"
   add_index "classification_data", ["user_id"], :name => "index_classification_data_on_user_id"
 
   create_table "numeric_data", :force => true do |t|
-    t.integer  "question_id", :null => false
-    t.integer  "user_id",     :null => false
+    t.integer  "question_id",                    :null => false
+    t.integer  "user_id",                        :null => false
     t.float    "value"
     t.boolean  "anonymized"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "public",      :default => false
   end
 
   add_index "numeric_data", ["question_id"], :name => "index_numeric_data_on_question_id"
@@ -59,12 +61,13 @@ ActiveRecord::Schema.define(:version => 20130624022224) do
   add_index "questions", ["test_id"], :name => "index_questions_on_test_id"
 
   create_table "registrations", :force => true do |t|
-    t.integer  "test_id",                        :null => false
-    t.integer  "user_id",                        :null => false
+    t.integer  "test_id",                            :null => false
+    t.integer  "user_id",                            :null => false
     t.integer  "frequency",       :default => 1
     t.date     "expiration_date"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "public",          :default => false
   end
 
   add_index "registrations", ["test_id"], :name => "index_registrations_on_test_id"
@@ -72,11 +75,12 @@ ActiveRecord::Schema.define(:version => 20130624022224) do
 
   create_table "string_data", :force => true do |t|
     t.string   "value"
-    t.integer  "question_id", :null => false
-    t.integer  "user_id",     :null => false
+    t.integer  "question_id",                    :null => false
+    t.integer  "user_id",                        :null => false
     t.boolean  "anonymized"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "public",      :default => false
   end
 
   add_index "string_data", ["question_id"], :name => "index_string_data_on_question_id"
