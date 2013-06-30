@@ -12,6 +12,8 @@ gem 'sqlite3'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'haml'
+  gem 'haml-rails'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -30,12 +32,12 @@ group :development do
 end
 
 group :test do 
-  #gem 'cucumber-rails'
-  #gem 'rspec'
-  #gem 'rspec-rails'
-  #
-  ## For model factory
-  #gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'rspec'
+  gem 'rspec-rails'
+  
+  # For model factory
+  gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'
