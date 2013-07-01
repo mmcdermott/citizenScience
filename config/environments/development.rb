@@ -34,4 +34,25 @@ CitizenScience::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    #Bullet.growl = true
+    #Bullet.xmpp = { :account  => 'bullets_account@jabber.org',
+    #                :password => 'bullets_password_for_jabber',
+    #                :receiver => 'your_account@jabber.org',
+    #                :show_online_status => true }
+    Bullet.rails_logger = true
+    Bullet.airbrake = true
+  end
+  silence_warnings do
+    begin
+      require 'pry'
+      IRB = Pry
+    rescue LoadError
+    end
+  end
 end
