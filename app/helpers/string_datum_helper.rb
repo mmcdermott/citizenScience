@@ -1,0 +1,2 @@
+module StringDatumHelper
+end

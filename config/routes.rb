@@ -1,4 +1,10 @@
 CitizenScience::Application.routes.draw do
+  get "pages/main"
+
+  get "pages/about"
+
+  root to: 'pages#main'
+
   resources :users, except: [:index], shallow: true do
     resource :profile, only: [:show, :edit, :update]
     resources :registrations, except: [:new, :create], path: 'tests'

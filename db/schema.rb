@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130629155427) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "profiles", ["user_id"], :name => "user_id_ix"
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
   create_table "questions", :force => true do |t|
     t.integer  "test_id",                    :null => false
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20130629155427) do
     t.datetime "updated_at",                    :null => false
   end
 
-  add_index "tests", ["creator_id"], :name => "creator_id_ix"
+  add_index "tests", ["creator_id"], :name => "index_tests_on_creator_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
