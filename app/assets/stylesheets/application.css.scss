@@ -14,3 +14,47 @@
  */
 
 @import "bootstrap";
+
+$headerColor: #FFE873;
+$navOptionColor: #FFF2B2;
+$navbarHeight: 2em;
+$mastheadHeight: 9em;
+
+header#sitewide {
+  background: $headerColor;
+  padding: 0 0 1em 1em;
+  box-shadow: 0 .1em 0.1em lighten($headerColor, 7%);
+  height: $mastheadHeight;
+
+  #logo img {
+    width: 41%;
+  }
+}
+
+nav { 
+  position: absolute;
+  top: $mastheadHeight - 1.4em;
+  width: 100%;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  ul li {
+    float: left;
+    width: 6.5%;
+    margin-right: .8em;
+    a {
+      text-align: center;
+      display: block;
+      line-height: $navbarHeight;
+      width: 100%;
+      border-radius: .2em;
+      background: $navOptionColor;
+      &:hover {
+        text-decoration: none;
+        background-color: lighten($navOptionColor, 10%);
+      }
+    }
+  }
+}
