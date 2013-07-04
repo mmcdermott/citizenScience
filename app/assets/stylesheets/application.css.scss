@@ -14,10 +14,11 @@
  */
 
 @import "bootstrap";
-
+$logoAspect: (141/686)px;
 $headerColor: #FFE873;
 $navOptionColor: #FFF2B2;
 $navbarHeight: 2em;
+$logoWidth: 41%;
 $mastheadHeight: 9em;
 
 header#sitewide {
@@ -27,22 +28,26 @@ header#sitewide {
   height: $mastheadHeight;
 
   #logo img {
-    width: 41%;
+    position: absolute;
+    top: .1em;
+    left: 1em;
+    width: $logoWidth;
   }
 }
 
 nav { 
   position: absolute;
-  top: $mastheadHeight - 1.4em;
-  width: 100%;
+  top: $mastheadHeight - 3*$navbarHeight/4;
+
   &:after {
     content: "";
     display: table;
     clear: both;
   }
+
   ul li {
     float: left;
-    width: 6.5%;
+    width: 7em;
     margin-right: .8em;
     a {
       text-align: center;
@@ -57,4 +62,8 @@ nav {
       }
     }
   }
+}
+
+.main_content {
+  margin: 1em;
 }

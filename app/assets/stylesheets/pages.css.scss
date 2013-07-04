@@ -1,3 +1,27 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$backgroundColor: #321D72;
+$textColor: white;
+
+.RENAME_ME {
+  text-align: center;
+  padding-top: 3em;
+  background: $backgroundColor;
+  border-radius: 1em;
+  color: $textColor;
+  
+  h1 {
+    font-size: 5em;
+  }
+}
+
+.lifeBox {
+  text-align: center;
+  padding: 1em;
+  height: 30em;
+  background: $backgroundColor;
+  border-radius: 1em;
+  color: $textColor;
+}

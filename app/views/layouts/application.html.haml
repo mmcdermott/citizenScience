@@ -39,18 +39,23 @@
   /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
   / Add your site or application content here
   
-  %header#sitewide
-    #logo
-      =image_tag 'logoAttempt1.png'
-    %nav
-      %ul
-        %li
-          %a{href: '#'}='Profile'
-        %li
-          %a{href: '#'}='Your Tests'
-        %li
-          %a{href: '#'}='Create a Test'
-  =yield
+  .row-fluid
+    .span12
+      %header#sitewide
+        #logo
+          =image_tag 'logoAttempt1.png'
+        %nav
+          %ul
+            %li
+              %a{href: '#'}='Profile'
+            %li
+              %a{href: '#'}='Your Tests'
+            %li
+              %a{href: '#'}='Create a Test'
+  .row-fluid
+    .span12
+      .main_content
+        =yield
   
   
   / JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom
