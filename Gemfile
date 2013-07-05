@@ -10,6 +10,9 @@ gem 'bootstrap-sass', '~> 2.1.0.0'
 gem 'rails-boilerplate'
 gem 'haml-rails'
 
+# User Authentication
+gem 'devise'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -45,9 +48,6 @@ group :test do
 end
 
 gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

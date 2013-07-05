@@ -54,6 +54,12 @@
               %a{href: '#'}='Create a Test'
   .row-fluid
     .span12
+      -unless flash[:notice].nil?
+        %p.notice=flash[:notice]
+      -unless flash[:alert].nil?
+        %p.alert=alert
+  .row-fluid
+    .span12
       .main_content
         =yield
   

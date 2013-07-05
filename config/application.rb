@@ -58,5 +58,9 @@ module CitizenScience
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Per devise generator recommendation, this will prevent the application 
+    # from accessing the DB or load models when precompiling assets. 
+    config.assets.initialize_on_precompile = false
   end
 end

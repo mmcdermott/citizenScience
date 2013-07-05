@@ -1,4 +1,6 @@
 CitizenScience::Application.routes.draw do
+  devise_for :users
+
   get "pages/main"
 
   get "pages/about"

@@ -20,6 +20,11 @@ CitizenScience::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Setting up action_mailer url
+  
+  #config.action_mailer.default_url_options = {host: 'http://sciencify.me'}
+  config.action_mailer.default_url_options = {host: 'http://evening-cove-6796.herokuapp.com/'}
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
