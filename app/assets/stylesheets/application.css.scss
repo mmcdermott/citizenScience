@@ -22,6 +22,22 @@ $logoWidth: 45%;
 $mastheadHeight: 9em;
 $footerHeight: 4em;
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -$footerHeight;
+}
+
 #sitewide {
   background: $baseColor;
 }
@@ -63,9 +79,15 @@ header#sitewide {
   margin: 1em;
 }
 
+#push {
+  height: $footerHeight;
+}
+
 footer#sitewide {
   box-shadow: 0 -.1em 0.1em lighten($baseColor, 7%);
   height: $footerHeight;
+  //position: absolute;
+  //bottom: 0;
   
   nav ul li a {
     display: block;
