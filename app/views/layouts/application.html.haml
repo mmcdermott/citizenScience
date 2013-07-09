@@ -45,9 +45,15 @@
     .row-fluid
       .span12
         -unless flash[:notice].nil?
-          %p.notice=flash[:notice]
+          .alert.alert-success
+            %button{:type => 'button', :class => 'close', :data => {:dismiss => 'alert'}}
+              &times;
+            =flash[:notice]
         -unless flash[:alert].nil?
-          %p.alert=alert
+          .alert.alert-error
+            %button{:type => 'button', :class => 'close', :data => {:dismiss => 'alert'}}
+              &times;
+            =flash[:alert]
     .row-fluid
       .span12
         .main_content

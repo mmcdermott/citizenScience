@@ -32,7 +32,7 @@ CitizenScience::Application.configure do
   #  password: ENV['SMTP_PASSWORD'],
   #  enable_starttls_auto: false
   #}
-  config.action_mailer.default_url_options = {host: 'evening-cove-6796.herokuapp.com'}
+  config.action_mailer.default_url_options = {host: 'sciencify.me'}
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
