@@ -23,7 +23,17 @@ CitizenScience::Application.configure do
   # Setting up action_mailer url
   
   #config.action_mailer.default_url_options = {host: 'http://sciencify.me'}
-  config.action_mailer.default_url_options = {host: 'http://evening-cove-6796.herokuapp.com/'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    address: "mail.sciencify.com",
+    port: 25,
+    authentication: "plain",
+    user_name: "team@sciencify.com",
+    password: ENV['SMTP_PASSWORD'],
+    enable_starttls_auto: false
+  }
+  #config.action_mailer.default_url_options = {host: 'http://evening-cove-6796.herokuapp.com/'}
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
