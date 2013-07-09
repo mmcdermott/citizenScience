@@ -30,4 +30,11 @@ class User < ActiveRecord::Base
   has_many :questions, through: :classification_data
   has_many :questions, through: :numeric_data
   has_many :questions, through: :string_data
+
+  #Callbacks:
+  after_create :make_profile
+
+  def make_profile
+    self.create_profile
+  end
 end

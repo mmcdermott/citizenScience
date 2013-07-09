@@ -1,11 +1,9 @@
 CitizenScience::Application.routes.draw do
   devise_for :users
 
-  get "pages/main"
-
-  get "pages/about"
-
   root to: 'pages#main'
+
+  get "/about", to: 'pages#about'
 
   resources :users, except: [:index], shallow: true do
     resource :profile, only: [:show, :edit, :update]
