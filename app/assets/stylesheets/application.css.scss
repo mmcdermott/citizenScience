@@ -56,10 +56,14 @@ header#sitewide {
   nav {
   position: absolute;
   top: $mastheadHeight - 3*$navbarHeight/4;
+  width: 90%;
   ul li {
     float: left;
     width: 7em;
     margin-right: .8em;
+    &#sign_out {
+      float: right;
+    }
     a {
       text-align: center;
       display: block;
