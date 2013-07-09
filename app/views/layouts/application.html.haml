@@ -41,17 +41,7 @@
   
   .row-fluid
     .span12
-      %header#sitewide
-        #logo
-          =link_to image_tag('logoAttempt1.png'), root_path
-        %nav
-          %ul
-            %li
-              %a{href: '#'}='Profile'
-            %li
-              %a{href: '#'}='Your Tests'
-            %li
-              %a{href: '#'}='Create a Test'
+      =render 'layouts/sitewideHeader'
   .row-fluid
     .span12
       -unless flash[:notice].nil?
