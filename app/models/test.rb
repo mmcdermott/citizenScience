@@ -11,7 +11,7 @@
 #
 
 class Test < ActiveRecord::Base
-  attr_accessible :description, :frequency, :published
+  attr_accessible :description, :frequency, :published, :name, :questions_attributes, :question_attributes, :creator_id
 
   #Relationships:
   has_many :questions, dependent: :destroy
@@ -20,4 +20,6 @@ class Test < ActiveRecord::Base
   has_many :string_data,         through: :questions, dependent: :destroy
   has_many :users,               through: :registrations
   belongs_to :creator, class_name: 'User', foreign_key: 'creator_id'
+
+  accepts_nested_attributes_for :questions
 end

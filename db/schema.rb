@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130705031754) do
+ActiveRecord::Schema.define(:version => 20130711005413) do
 
   create_table "classification_data", :force => true do |t|
     t.integer  "question_id",                    :null => false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130705031754) do
     t.boolean  "published",   :default => true
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "name"
   end
 
   add_index "tests", ["creator_id"], :name => "index_tests_on_creator_id"
