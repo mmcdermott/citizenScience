@@ -1,0 +1,30 @@
+= form_for @test do |test_form|
+  .formInputs
+    .testDetails
+      %legend='Test Details'
+      = test_form.hidden_field(:creator_id, value: current_user.id)
+      = test_form.label :name
+      = test_form.text_field :name, placeholder: 'Test Name...'
+      = test_form.label :description
+      = test_form.text_area :description, placeholder: 'Describe Your New Test Here...', size: '60x10'
+    .questionDetails
+      %legend='Question Details'
+      = test_form.fields_for :questions do |question_form|
+        .questionInput
+          = question_form.label :question
+          = question_form.text_field :question, placeholder: 'Question Name'
+          = question_form.label :input_label
+          = question_form.text_field :input_label, placeholder: 'Data Label'
+          %br
+          %span='Data Type:'
+          .answerTypes
+            %label.radio
+              = question_form.radio_button(:answer_type, 'numeric')
+              Number
+            %label.radio
+              = question_form.radio_button(:answer_type, 'classification')
+              Classification
+            %label.radio
+              = question_form.radio_button(:answer_type, 'string')
+              String
+  = test_form.submit "Create", class: 'btn'
