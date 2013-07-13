@@ -9,7 +9,7 @@
         %li
           %a{href: user_registrations_path(current_user)}='Your Tests'
         %li
-          %a{href: new_test_path}='Create a Test'
+          %a{href: new_metric_path}='Create a Metric'
         %li#sign_out
           %a{href: destroy_user_session_path, method: :delete}='Sign Out'
       -else
@@ -18,4 +18,4 @@
         %li
           %a{href: new_user_registration_path}='Sign Up'
         %li
-          %a{href: new_test_path}='Create a Test'
+          %a{href: new_metric_path}='Create a Test'

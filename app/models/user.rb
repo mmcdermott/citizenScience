@@ -21,12 +21,12 @@ class User < ActiveRecord::Base
 
   #Relationships:
   has_one :profile
-  has_many :tests
+  has_many :registrations
   has_many :classification_data
   has_many :numeric_data
   has_many :string_data
-  has_many :tests, through: :registrations, uniq: true
-  has_many :created_tests, class_name: 'Test', inverse_of: :creator, foreign_key: 'creator_id'
+  has_many :metrics, through: :registrations, uniq: true
+  has_many :created_metrics, class_name: 'Metric', inverse_of: :creator, foreign_key: 'creator_id'
   has_many :questions, through: :classification_data
   has_many :questions, through: :numeric_data
   has_many :questions, through: :string_data

@@ -21,5 +21,5 @@ class Question < ActiveRecord::Base
   has_many :users, through: :classification_data
   has_many :users, through: :string_data
   has_many :users, through: :numeric_data
-  belongs_to :test
+  belongs_to :metric
 end
