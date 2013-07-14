@@ -9,5 +9,13 @@ class QuestionsController < ApplicationController
   end
 
   def index
+    @metric = Metric.find params[:metric_id]
+    @questions = @metric.questions
+  end
+
+  def submit
+    question = Question.find(params[:id])
+    question.data.create(value: params[:value], user_id: current_user.id)
+    redirect_to question.metric
   end
 end

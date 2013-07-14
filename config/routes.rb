@@ -18,7 +18,7 @@ CitizenScience::Application.routes.draw do
   resources :metrics, except: [:edit, :update, :destroy], shallow: true do
     resources :registrations, only: [:index, :new, :create]
     resources :questions, except: [:edit, :update, :destroy] do
-      get 'submit', on: :member
+      post 'submit', on: :member
     end
   end
 end

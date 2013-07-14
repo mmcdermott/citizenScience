@@ -22,4 +22,15 @@ class Question < ActiveRecord::Base
   has_many :users, through: :string_data
   has_many :users, through: :numeric_data
   belongs_to :metric
+
+  def data
+    case answer_type
+    when ANSWER_TYPES[:numeric]
+      return numeric_data
+    when ANSWER_TYPES[:string]
+      return string_data
+    when ANSWER_TYPES[:classification]
+      return classification_data
+    end
+  end
 end
