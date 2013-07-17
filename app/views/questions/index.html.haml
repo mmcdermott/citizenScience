@@ -1,3 +1,3 @@
 %h1=@metric.name
 %p=@metric.description
-=render @questions
+=render partial: 'question_submit', collection: @questions, as: :question
