@@ -6,10 +6,19 @@
   border-radius: .2em;
   background: #FFF2B2;
   padding: 1em;
-  height: 4em;
-
+  width: 41em;
 }
 
 .question {
   font-size: 1.2em;
+}
+
+.data {
+  width: 41em;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
   def new
+    @metric = Metric.find(params[:metric_id])
+    @registration = @metric.registrations.new
   end
 
   def create
@@ -18,5 +20,6 @@ class RegistrationsController < ApplicationController
   end
   
   def index
+    @registrations = Registration.all
   end
 end

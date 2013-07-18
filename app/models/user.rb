@@ -34,6 +34,12 @@ class User < ActiveRecord::Base
   #Callbacks:
   after_create :make_profile
 
+  def registered_for metric
+    !(self.registrations.where(metric_id: metric.id).empty?)
+  end
+
+  private
+
   def make_profile
     self.create_profile
   end

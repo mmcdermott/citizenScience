@@ -2,7 +2,7 @@
   .formInputs
     .testDetails
       %legend='Test Details'
-      = test_form.hidden_field(:creator_id, value: current_user.id)
+      = test_form.hidden_field :creator_id, value: current_user.id
       = test_form.label :name
       = test_form.text_field :name, placeholder: 'Test Name...'
       = test_form.label :description
