@@ -16,5 +16,6 @@ class MetricsController < ApplicationController
   end
 
   def index
+    @metrics = Metric.all
   end
 end
