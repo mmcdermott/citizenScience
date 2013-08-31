@@ -19,4 +19,8 @@ class UsersController < ApplicationController
 
   def created_tests
   end
+
+  def main
+    redirect_to user_registrations_path(current_user.id)
+  end
 end

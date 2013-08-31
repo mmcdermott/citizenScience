@@ -1,1 +1,14 @@
-%h3=metric.name
+.metric
+  .row-fluid
+    -#.span2
+    .span12
+      .title=link_to metric.name, metric
+      .description=metric.description
+  .row-fluid.infoAndActions
+    -#.span2
+    .span4.stat
+      ="#{metric.registrations.count} Participants"
+    .span4.stat
+      ="#{metric.data_count} Data Points Collected"
+    .span4.action
+      =link_to "Register Now", new_metric_registration_path(metric)

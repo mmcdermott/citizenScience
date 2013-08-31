@@ -16,6 +16,6 @@ class MetricsController < ApplicationController
   end
 
   def index
-    @metrics = Metric.all
+    @metrics = Metric.viewable
   end
 end

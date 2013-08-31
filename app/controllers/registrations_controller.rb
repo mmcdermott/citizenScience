@@ -20,6 +20,6 @@ class RegistrationsController < ApplicationController
   end
   
   def index
-    @registrations = Registration.all
+    @registrations = Registration.where user_id: params[:id]
   end
 end

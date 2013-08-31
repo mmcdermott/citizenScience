@@ -1,6 +1,9 @@
 CitizenScience::Application.routes.draw do
   devise_for :users
 
+  authenticated :user do 
+    root to: 'users#main'
+  end
   root to: 'pages#main'
 
   get "/about", to: 'pages#about'
@@ -16,7 +19,7 @@ CitizenScience::Application.routes.draw do
   end
 
   resources :metrics, except: [:edit, :update, :destroy], shallow: true do
-    resources :registrations, only: [:index, :new, :create]
+    resources :registrations, only: [:new, :create]
     resources :questions, except: [:edit, :update, :destroy] do
       post 'submit', on: :member
     end

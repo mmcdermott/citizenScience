@@ -23,4 +23,13 @@ class Metric < ActiveRecord::Base
   belongs_to :creator, class_name: 'User', foreign_key: 'creator_id'
 
   accepts_nested_attributes_for :questions
+
+  #Scopes:
+  scope :viewable, where(published: true)
+
+  #Methods: 
+  def data_count
+    classification_data.count + numeric_data.count + string_data.count
+  end
+
 end
