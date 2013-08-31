@@ -1,0 +1,14 @@
+.metric
+  .row-fluid
+    .span3.chart
+      =line_chart metric.questions.first.data.where(user_id: @user.id).group_by_day(:created_at).average(:value), height: '6em'
+    .span9
+      .row-fluid
+        .span12
+          .title=link_to metric.name, metric
+          .description=metric.description
+      .row-fluid.infoAndActions
+        .span3.stat
+          ="#{metric.data_count} Data Points"
+        .span9
+          =link_to "Add Data Now", metric_questions_path(metric)
