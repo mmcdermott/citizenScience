@@ -1,5 +1,5 @@
 %div{class: "question-#{ANSWER_TYPES[question.answer_type]}"}
-  .question=question.question
+  =render partial: 'questions/question_submit', locals: {question: question}
   %h3="Current Data"
   .data
     =line_chart question.data.group_by_day(:created_at).average(:value), id: "question-#{question.id}-chart"
