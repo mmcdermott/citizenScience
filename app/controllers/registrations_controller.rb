@@ -1,10 +1,13 @@
 class RegistrationsController < ApplicationController
   def new
-    @metric = Metric.find(params[:metric_id])
+    @metric = Metric.find params[:metric_id]
     @registration = @metric.registrations.new
   end
 
   def create
+    @metric = Metric.find params[:metric_id]
+    @registration = @metric.registrations.create(params[:registration])
+    redirect_to @metric
   end
 
   def show
@@ -20,6 +23,8 @@ class RegistrationsController < ApplicationController
   end
   
   def index
-    @registrations = Registration.where user_id: params[:id]
+    @user = User.find(params[:user_id])
+    #@registrations = Registration.where user_id: params[:user_id]
+    @metrics = @user.metrics
   end
 end
