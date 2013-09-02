@@ -13,7 +13,10 @@
 
 class Question < ActiveRecord::Base
   attr_accessible :answer_type, :question, :test_id, :input_label
-  
+
+  #validatations: 
+  validates_presence_of :question
+
   #Relationships:
   has_many :classification_data
   has_many :numeric_data

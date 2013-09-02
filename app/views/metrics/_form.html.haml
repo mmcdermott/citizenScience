@@ -10,21 +10,6 @@
     .questionDetails
       %legend='Question Details'
       = test_form.fields_for :questions do |question_form|
-        .questionInput
-          = question_form.label :question
-          = question_form.text_field :question, placeholder: 'Question Name'
-          = question_form.label :input_label
-          = question_form.text_field :input_label, placeholder: 'Data Label'
-          %br
-          %span='Data Type:'
-          .answerTypes
-            %label.radio
-              = question_form.radio_button(:answer_type, 'numeric')
-              Number
-            %label.radio
-              = question_form.radio_button(:answer_type, 'classification')
-              Classification
-            %label.radio
-              = question_form.radio_button(:answer_type, 'string')
-              String
-  = test_form.submit "Create", class: 'btn'
+        = render partial: 'question_form', object: question_form
+      #AddQuestion.btn.btn-small="Add Another Question"
+  = test_form.submit "Create Metric!", class: 'btn btn-success btn-large'

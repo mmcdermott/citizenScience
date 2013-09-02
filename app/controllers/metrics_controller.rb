@@ -1,10 +1,13 @@
 class MetricsController < ApplicationController
   def new
     @metric = Metric.new
-    @metric.questions.build
+    5.times {@metric.questions.build}
   end
 
   def create
+    params[:metric][:questions_attributes].each do |key, value|
+      params[:metric][:questions_attributes].delete(key) if value[:question].empty?
+    end
     @metric = Metric.create params[:metric]
     redirect_to @metric
   end 
